@@ -13,8 +13,14 @@ class App extends React.Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
-    const doubleValue = event.target.value * 2;
-    this.setState({ doubleValue });
+    const charEntered = event.target.value.slice(-1);
+    if (charEntered == ",") {
+      this.setState({ doubleValue: this.state.doubleValue + "," });
+    } else {
+      var substr = event.target.value.substring(event.target.value.lastIndexOf(",") + 1);
+      var lastVal = this.state.doubleValue.substring(0, event.target.value.lastIndexOf(",") + 1);
+      this.setState({ doubleValue: lastVal + (substr * 2) });
+    }
   }
 
   render() {
