@@ -11,16 +11,26 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  /**
+   * 
+   * @param {*} event - the following assumptions have been made:
+   * --no other character other than comma and numerics would be allowed; hence, if the user enters
+   *       any other character, it won't appear on both the input and output
+   * --no null values are allowed; hence, succeeding commas could not be used as input
+   */
   handleChange(event) {
-    this.setState({ value: event.target.value });
     const charEntered = event.target.value.slice(-1);
-    if (charEntered == ",") {
+    if (charEntered == "," && event.target.value.charAt(event.target.value.length - 2) != ",") {
+      this.setState({ value: event.target.value });
       this.setState({ doubleValue: this.state.doubleValue + "," });
-    } else {
-      var substr = event.target.value.substring(event.target.value.lastIndexOf(",") + 1);
-      var lastVal = this.state.doubleValue.substring(0, event.target.value.lastIndexOf(",") + 1);
+    } else if (!isNaN(Number(charEntered))) {
+      this.setState({ value: event.target.value });
+      const substr = event.target.value.substring(event.target.value.lastIndexOf(",") + 1);
+      const lastVal = this.state.doubleValue.substring(0, event.target.value.lastIndexOf(",") + 1);
       this.setState({ doubleValue: lastVal + (substr * 2) });
     }
+
+
   }
 
   render() {
