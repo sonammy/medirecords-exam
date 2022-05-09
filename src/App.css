@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;800&display=swap');
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#outer {
+  width: 100%;
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  /* Safari and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /* W3C */
+  display: box;
+  box-pack: center;
+  box-align: center;
+}
+
+#inner {
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  flex-direction: row;
+  align-items: stretch;
+  padding-top: 3rem;
+}
+
+.header1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.header2 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 35px;
+}
+
+.form-style {
+  width: 500px;
+  border: 2px solid #C6C4C4;
+  display: inline-block;
+  padding: 2rem 2rem 12rem 2rem;
+  margin: 5px
+}
+
+.form-header-style {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.form-label-style {
+  font-size: 12px;
+}
+
+.form-input-style {
+  width: 100%;
+  border: 2px solid #C6C4C4;
+}
+
+/*.centered-element {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  
+  transform: translate(-10%, -50%);
+}
+
+/* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+.box {
+  /*float: left;
+  width: 200px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 5px;
+  border: 2px solid blue;*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
